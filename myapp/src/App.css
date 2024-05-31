@@ -1,10 +1,6 @@
-.backgooundApp {
-  background-image: url("./assets/images/BI-2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.full-screen-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #331f7e;
+    font-family: ui-monospace;
+  }

@@ -1,0 +1,126 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/images/home.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*   border: 1px solid transparent;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transform: perspective(1000px) rotateX(20deg) rotateY(10deg);  */
+  transition: opacity 0.5s ease, transform 1s ease; /* Animation for fade out */
+}
+.container.hidden {
+  opacity: 0;
+  transform: perspective(50px) rotateX(0deg) rotateY(280deg); /* Slightly shrink the container */
+}
+.container.hidden-complete {
+  display: none; /* Completely hide the container */
+}
+
+.svg-container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0;
+  grid-template-areas:
+    ". . . ."
+    ". . landing-svg landing-svg"
+    ". . login login"
+    ". . . .";
+}
+
+.svg-div {
+  grid-area: landing-svg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-svg {
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.login {
+  grid-area: login;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login:hover {
+  font-size: 2rem;
+  animation: fontAnimation 1s infinite alternate; /* Continuous animation */
+}
+@keyframes fontAnimation {
+  0% {
+    font-size: 2rem; /* Start with no width */
+  }
+  20% {
+    font-size: 2.2rem; /* Start with no width */
+  }
+  40% {
+    font-size: 2.3rem; /* End with initial width */
+  }
+  60% {
+    font-size: 2.4rem; /* End with initial width */
+  }
+  100% {
+    font-size: 2.5rem; /* End with initial width */
+  }
+}
+
+.login::after {
+  content: "";
+  width: 50%; /* Initial width */
+  height: 2px; /* Line height */
+  background-color: #d9d9d9; /* Line color */
+  margin-top: 10px; /* Space between text and line */
+  animation: lineAnimation 1s infinite alternate; /* Continuous animation */
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0%; /* Start with no width */
+  }
+  100% {
+    width: 40%; /* End with initial width */
+  }
+}
+
+.loginButton {
+  background: none;
+  border: none;
+  color: #d9d9d9;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 400;
+  width: 40%;
+  height: 60%;
+}
+
+/****/
+/* Initial state of the loginContainer */
+.loginContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #331f7e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start with the container hidden */
+  transform: perspective(50px) rotateY(280deg); /* Apply initial transform */
+  transition: opacity 0.5s ease, transform 1s ease; /* Define transitions */
+}
+
+/* State when the container is visible */
+.loginContainer.visible {
+  opacity: 1; /* Make the container fully visible */
+  transform: perspective(50px) rotateY(0deg); /* Reset the transform to show the container */
+}
