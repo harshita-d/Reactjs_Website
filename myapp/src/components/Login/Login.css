@@ -1,0 +1,123 @@
+.login-div {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+  grid-template-areas:
+    "login-div login-div  left-panel"
+    "login-div login-div  left-panel";
+}
+
+.login-left-panel {
+  grid-area: left-panel;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-login-div {
+  grid-area: login-div;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-svg {
+  width: 65%;
+  height: auto;
+  object-fit: cover;
+}
+
+.loginHeading {
+  font-size: 2.5rem;
+  color: #d9d9d9d4;
+  margin-bottom: 12%;
+}
+
+.input-div {
+  outline: coral;
+}
+.login-left-panel {
+  width: 33%;
+  height: 100vh;
+  background-color: #0000004f;
+  /*   filter: blur(3px); */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  right: -365px;
+  top: 0;
+  transition: right 3s ease;
+  border-top-left-radius: 36px; /* Border radius on the top left */
+  border-bottom-left-radius: 36px; /* Border radius on the bottom left */
+}
+
+@keyframes slideIn {
+  from {
+    right: -1000px; /* Start position */
+  }
+  to {
+    right: 0; /* End position */
+  }
+}
+
+.login-left-panel.animate {
+  animation: slideIn 2s forwards; /* Trigger the slide-in animation */
+}
+
+.login-left-panel input {
+  width: calc(100% - 30%);
+  padding: 24px 20px;
+  margin-bottom: 8vh;
+  /* border: 1px solid #ccc; */
+  border-radius: 12px;
+  box-sizing: border-box;
+  background: #584f7a;
+  color: #d9d9d9d4;
+}
+
+.loginSubmit {
+  width: calc(100% - 10%);
+  padding: 17px 20px;
+  margin-bottom: 8vh;
+  /* border: 1px solid #ccc; */
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: #271a5b;
+  color: #d9d9d9d4;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: box-shadow 0.3s ease;
+  box-shadow: black;
+}
+
+.loginSubmit:hover {
+  box-shadow: black;
+  background-color: #271a5b;
+}
+
+.loginSubmit:hover {
+  box-shadow: 53px 68px 68px rgb(0 0 0 / 44%);
+  transform: translateZ(300px);
+}
+
+.signin-tab {
+  color: #d9d9d9d4;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.signin-tab:hover {
+  animation: fontAnimation 1s infinite alternate;
+}
+@keyframes fontAnimation {
+  0% {
+    font-size: 1rem; /* Start with no width */
+  }
+  100% {
+    font-size: 1.1rem; /* Start with no width */
+  }
+}

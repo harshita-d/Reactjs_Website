@@ -1,9 +1,9 @@
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./components/Home/Home.jsx";
 
 function App() {
   return (
-    <div className="backgooundApp">
+    <div className="full-screen-container">
       <Home />
     </div>
   );
