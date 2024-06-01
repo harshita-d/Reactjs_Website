@@ -10,7 +10,7 @@ function Login() {
   }, []);
   return (
     <div className="login-div">
-      <div className="svg-login-div">
+      <div className={`svg-login-div ${isVisible ? "animateSVG" : ""}`}>
         <LoginSvg className="login-svg" />
       </div>
       <div className={`login-left-panel ${isVisible ? "animate" : ""}`}>
